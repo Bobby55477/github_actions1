@@ -1,10 +1,14 @@
-name: My first workflow
+name: Multiple commands.
 
-on: push
+on: workflow_dispatch
 
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: print message
-        run: echo "Hello world"
+      - name: show date
+        run: date
+      - name: Show current folder
+        run: pwd
+      - name: Show files
+        run: ls -la
