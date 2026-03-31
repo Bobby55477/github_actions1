@@ -1,0 +1,16 @@
+name: Install nodejs
+
+on: workflow_dispatch
+
+jobs:
+  node-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      
+      - name: Install nodejs
+        uses: action/setup-node@v4
+        with:
+          node-version: 20
+      - name: check version
+        run: node --version
